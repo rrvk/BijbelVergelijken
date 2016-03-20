@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.gb_opties = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.cbHoofdstuk = new System.Windows.Forms.ComboBox();
             this.cbBoek = new System.Windows.Forms.ComboBox();
             this.cbVertaling2 = new System.Windows.Forms.ComboBox();
@@ -44,6 +46,7 @@
             // 
             // gb_opties
             // 
+            this.gb_opties.Controls.Add(this.label3);
             this.gb_opties.Controls.Add(this.cbHoofdstuk);
             this.gb_opties.Controls.Add(this.cbBoek);
             this.gb_opties.Controls.Add(this.cbVertaling2);
@@ -57,6 +60,16 @@
             this.gb_opties.TabIndex = 0;
             this.gb_opties.TabStop = false;
             this.gb_opties.Text = "Opties";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(693, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(108, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Locatie bijbelboeken:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // cbHoofdstuk
             // 
@@ -159,7 +172,6 @@
             "Good News Translation (Today\'s English Version, Second Edition)",
             "Groot Nieuws Bijbel (herziene editie 1996)",
             "Herziene Statenvertaling",
-            "Jongerenbijbel",
             "NBG-vertaling 1951",
             "New American Standard Bible",
             "Nije Fryske Bibeloersetting",
@@ -175,33 +187,15 @@
             // 
             // cbVertaling1
             // 
-            this.cbVertaling1.DisplayMember = "Jongerenbijbel";
             this.cbVertaling1.FormattingEnabled = true;
             this.cbVertaling1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.cbVertaling1.Items.AddRange(new object[] {
-            "Amplified Bible",
-            "Biblia Dios Habla Hoy (derde editie)",
-            "Biebel in de Twentse Sproake",
-            "Biebel in t Grunnegers",
-            "Bijbel in Gewone Taal",
-            "Contemporary English Version, Second Edition",
-            "De Nieuwe Bijbelvertaling",
-            "Good News Translation (Today\'s English Version, Second Edition)",
-            "Groot Nieuws Bijbel (herziene editie 1996)",
-            "Herziene Statenvertaling",
-            "Jongerenbijbel",
-            "NBG-vertaling 1951",
-            "New American Standard Bible",
-            "Nije Fryske Bibeloersetting",
-            "Statenvertaling (editie 1977)",
-            "Statenvertaling (Jongbloed-editie)",
-            "The Message",
-            "Willibrordvertaling (editie 2012)"});
+            ""});
             this.cbVertaling1.Location = new System.Drawing.Point(66, 12);
             this.cbVertaling1.Name = "cbVertaling1";
             this.cbVertaling1.Size = new System.Drawing.Size(160, 21);
             this.cbVertaling1.TabIndex = 1;
-            this.cbVertaling1.Text = "Jongerenbijbel";
+            this.cbVertaling1.Text = "De Nieuwe Bijbelvertaling";
             this.cbVertaling1.SelectedIndexChanged += new System.EventHandler(this.cbVertaling1_SelectedIndexChanged);
             // 
             // label2
@@ -263,8 +257,10 @@
             this.ClientSize = new System.Drawing.Size(996, 419);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gb_opties);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Bijbel boeken vergelijken";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.gb_opties.ResumeLayout(false);
             this.gb_opties.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -285,6 +281,7 @@
         private System.Windows.Forms.TextBox bijbel1;
         private System.Windows.Forms.TextBox bijbel2;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label3;
     }
 }
 
